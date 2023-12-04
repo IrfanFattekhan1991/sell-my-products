@@ -1,27 +1,17 @@
-import { StyleSheet, View, TextInput, Text } from "react-native";
+import { StyleSheet, View } from "react-native";
+import LoginScreen from "./app/screens/LoginScreen";
+import RegisterScreen from "./app/screens/RegisterScreen";
+import ListingEditScreen from "./app/components/ListingEditScreen";
+import ListItem from "./app/components/ListItem";
 
-import AppTextInput from "./app/components/AppTextInput";
-import { Switch } from "react-native";
-import { useState } from "react";
-import AppPicker from "./app/components/AppPicker";
-
-const categories = [
-  { label: "Furniture", value: 1 },
-  { label: "Clothing", value: 2 },
-  { label: "Cameras", value: 3 },
-];
 export default function App() {
-  const [category, setCategory] = useState();
   return (
     <View style={styles.container}>
-      <AppPicker
-        selectedItem={category}
-        onSelectItem={(item) => setCategory(item)}
-        items={categories}
-        icon="apps"
-        placeholder="Category"
+      <ListItem
+        image={require("./app/assets/irfan.jpg")}
+        title="Irfan"
+        subtitle="Irfan"
       />
-      <AppTextInput icon="email" placeholder="User Name" />
     </View>
   );
 }
